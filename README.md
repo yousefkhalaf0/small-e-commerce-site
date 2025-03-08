@@ -99,27 +99,7 @@ ng build --configuration production
 - **Component Architecture**: Organized the app into reusable and modular components.
 - **JSON Data**: Loaded and displayed product data from a local JSON file.
 
-## JSON Data Example
 
-The `products.json` file (located in `src/app/assets/`) contains the product data in the following format:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Product 1",
-    "price": 19.99,
-    "description": "This is a description for Product 1.",
-    "image": "assets/images/product1.jpg"
-  },
-  {
-    "id": 2,
-    "name": "Product 2",
-    "price": 29.99,
-    "description": "This is a description for Product 2.",
-    "image": "assets/images/product2.jpg"
-  }
-]
 ```
 
 ## Future Improvements
