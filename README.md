@@ -64,11 +64,11 @@ src/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/angular-products-app.git
+   git clone https://github.com/yousefkhalaf0/small-e-commerce-site.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd angular-products-app
+   cd small-e-commerce-site.git
    ```
 3. Install dependencies:
    ```bash
