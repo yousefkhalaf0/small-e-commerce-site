@@ -1,0 +1,139 @@
+<br />
+<main class="container border rounded p-5 w-50 bg-light">
+  <p class="display-3 text-center">Register</p>
+  <form
+    [formGroup]="registerForm"
+    (ngSubmit)="handleSubmitForm()"
+    class="w-75 mx-auto"
+  >
+    <div class="mb-3">
+      <label for="exampleInputName" class="form-label fw-bold">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputName"
+        aria-describedby="nameHelp"
+        formControlName="name"
+        autocomplete="name"
+      />
+      @if (formControls['name'].invalid && formControls['name'].touched) {
+      <div class="form-text text-danger">
+        @if (formControls['name'].hasError('required')) {
+        <span>Name is required.</span>
+        } @if (formControls['name'].hasError('pattern')) {
+        <span>Name must contain only letters and valid characters.</span>
+        }
+      </div>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label fw-bold"
+        >Email Address</label
+      >
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        formControlName="email"
+        autocomplete="email"
+      />
+      @if (formControls['email'].invalid && formControls['email'].touched) {
+      <div class="form-text text-danger">
+        @if (formControls['email'].hasError('required')) {
+        <span>Email is required.</span>
+        } @if (formControls['email'].hasError('email')) {
+        <span>Invalid email address.</span>
+        }
+      </div>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputUserName" class="form-label fw-bold"
+        >User Name</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputUserName"
+        aria-describedby="userNameHelp"
+        formControlName="userName"
+        autocomplete="username"
+      />
+      @if (formControls['userName'].invalid && formControls['userName'].touched)
+      {
+      <div class="form-text text-danger">
+        @if (formControls['userName'].hasError('required')) {
+        <span>Username is required.</span>
+        } @if (formControls['userName'].hasError('pattern')) {
+        <span
+          >Username must be 3-15 characters long and can contain lowercase
+          letters, numbers, underscores, or hyphens.</span
+        >
+        }
+      </div>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label fw-bold"
+        >Password</label
+      >
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        formControlName="password"
+        autocomplete="new-password"
+      />
+      @if (formControls['password'].invalid && formControls['password'].touched)
+      {
+      <div class="form-text text-danger">
+        @if (formControls['password'].hasError('required')) {
+        <span>Password is required.</span>
+        } @if (formControls['password'].hasError('minlength')) {
+        <span>Password must be at least 8 characters long.</span>
+        } @if (formControls['password'].hasError('pattern')) {
+        <span>
+          Password must contain at least one uppercase letter, one lowercase
+          letter, one number, and one special character.
+        </span>
+        }
+      </div>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputConfirmPassword" class="form-label fw-bold"
+        >Confirm Password</label
+      >
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputConfirmPassword"
+        formControlName="confirmPassword"
+        autocomplete="new-password"
+      />
+      @if (formControls['confirmPassword'].invalid &&
+      formControls['confirmPassword'].touched) {
+      <div class="form-text text-danger">
+        @if (formControls['confirmPassword'].hasError('required')) {
+        <span>Confirm Password is required.</span>
+        } @if (formControls['confirmPassword'].hasError('passwordMismatch')) {
+        <span>Passwords do not match.</span>
+        }
+      </div>
+      }
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary rounded-pill w-100 mt-3"
+      [disabled]="registerForm.invalid"
+    >
+      Register
+    </button>
+
+    <div class="text-center mt-3">
+      <span>Already have an account! </span>
+      <a routerLink="/login" class="text-decoration-none">Login</a>
+    </div>
+  </form>
+</main>

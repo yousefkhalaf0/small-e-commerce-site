@@ -1,0 +1,20 @@
+<p class="ms-5">Welcome to our shopping website, start browsing...</p>
+<div class="row g-4 mt-3 d-flex justify-content-center">
+  @for (product of products; track product.id) {
+  <div
+    class="col-2 mx-3 rounded border border-1 border-secondary myCard"
+    style="background-color: azure"
+    (click)="handleRedirect(product.id)"
+  >
+    <app-product-card
+      [newProduct]="product"
+      [productId]="product.id"
+      (productAddedToCart)="handleAddToCart($event)"
+    ></app-product-card>
+  </div>
+  }@empty {
+  <div class="col-12 mt-4 text-center">
+    <p>No products found!</p>
+  </div>
+  }
+</div>

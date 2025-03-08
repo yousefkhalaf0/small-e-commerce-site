@@ -1,0 +1,42 @@
+<div style="display: flex; flex-direction: column; height: 100%">
+  <div>
+    <span
+      class="badge rounded-pill mt-2"
+      [ngClass]="
+        newProduct().stock == 0
+          ? 'text-bg-danger'
+          : newProduct().stock > 0
+          ? 'text-bg-success'
+          : ''
+      "
+      >{{
+        newProduct().stock == 0
+          ? "out of stock"
+          : newProduct().stock > 0
+          ? "In stock"
+          : ""
+      }}</span
+    >
+    <img
+      [src]="newProduct().thumbnail"
+      alt="newProduct().title"
+      style="width: 100%"
+    />
+  </div>
+  <div class="row">
+    <p class="col-8 fw-bold">{{ newProduct().title }}</p>
+    <p class="col-4 fw-bold">{{ newProduct().price | currency }}</p>
+  </div>
+  <p style="color: gray">{{ newProduct().description | slice : 0 : 27 }}...</p>
+  <p>Rate: {{ newProduct().rating }}/10</p>
+  <div class="mt-auto">
+    <button
+      type="button"
+      class="btn btn-outline-primary rounded-pill mb-3"
+      [disabled]="newProduct().stock == 0"
+      (click)="handleAddToCart($event)"
+    >
+      Add to Cart
+    </button>
+  </div>
+</div>
