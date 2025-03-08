@@ -100,8 +100,6 @@ ng build --configuration production
 - **JSON Data**: Loaded and displayed product data from a local JSON file.
 
 
-```
-
 ## Future Improvements
 
 - Implement a backend API for product data and user authentication.
